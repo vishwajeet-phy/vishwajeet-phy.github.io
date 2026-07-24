@@ -4,124 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vishwajeet Swain</title>
-<meta name="description" content="Vishwajeet Swain — GRB afterglows, kilonovae, and electromagnetic counterparts of gravitational-wave sources. PhD candidate, IIT Bombay.">
+<meta name="description" content="Vishwajeet Swain — GRB afterglows, structured jets, and electromagnetic counterparts of gravitational-wave sources. PhD candidate, IIT Bombay.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1b1b1f;
-    --paper:#ffffff;
+    --paper:#fdfcfa;          /* warm press sheet rather than screen white */
+    --panel:#f7f5f1;
     --faint:#63636a;
-    --rule:#c9c9cd;
+    --rule:#cdcbc6;
     --link:#20509e;
 
-    /* section hues — muted, print-like */
-    --c-research:#20509e;   /* journal blue   */
-    --c-obs:#a8622d;        /* telescope-dome copper */
-    --c-methods:#3f7d5c;    /* viridian       */
-    --c-pubs:#8a3344;       /* bound-volume burgundy */
+    --c1:#20509e;   /* journal blue          */
+    --c2:#8a3344;   /* bound-volume burgundy */
+    --c3:#a8622d;   /* telescope-dome copper */
+    --c4:#3f7d5c;   /* viridian              */
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{
     background:var(--paper);
     color:var(--ink);
     font-family:'STIX Two Text', Georgia, 'Times New Roman', serif;
-    font-size:17.5px;
-    line-height:1.6;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
   }
-  .page{max-width:730px;margin:0 auto;padding:26px 22px 70px}
+  ::selection{background:#e7ecf6}
+  .page{max-width:680px;margin:0 auto;padding:26px 22px 60px}
 
   a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
+  a:hover{text-decoration:underline;text-underline-offset:2px}
   a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 
+  /* ---------- running head ---------- */
   .runhead{
     display:flex;justify-content:space-between;gap:12px;
     font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;
     color:var(--faint);
     border-bottom:1px solid var(--rule);
-    padding-bottom:6px;margin-bottom:50px;
+    padding-bottom:6px;margin-bottom:46px;
   }
 
-  .titleblock{text-align:center;margin-bottom:36px}
-  h1{font-weight:500;font-size:2.15rem;letter-spacing:.01em;line-height:1.2;margin-bottom:12px}
+  /* ---------- title block ---------- */
+  .titleblock{text-align:center;margin-bottom:34px}
+  h1{font-weight:500;font-size:2.2rem;letter-spacing:.005em;line-height:1.18;margin-bottom:12px}
   .authorline{font-size:1.02rem}
   .affil{font-style:italic;color:var(--faint);font-size:.95rem;margin-top:2px}
-  .linkline{margin-top:15px;font-size:.95rem}
+  .linkline{margin-top:16px;font-size:.95rem}
   .linkline a{white-space:nowrap}
   .linkline .sep{color:var(--rule);margin:0 7px}
 
-  .abstract{margin:0 30px 20px;font-size:.98rem}
+  /* ---------- abstract ---------- */
+  .abstract{margin:0 26px 22px;font-size:.99rem}
   .abstract p + p{margin-top:10px}
-  @media (max-width:560px){ .abstract{margin:0 4px 18px} }
-
-  .photo{float:right;width:130px;margin:4px 0 10px 18px;border:1px solid var(--rule)}
-  .photo-note{
-    float:right;width:130px;height:160px;margin:4px 0 10px 18px;
-    border:1px dashed var(--rule);color:var(--faint);
-    display:flex;align-items:center;justify-content:center;text-align:center;
-    font-size:.7rem;line-height:1.4;padding:8px;
+  @media (max-width:600px){.abstract{margin:0 2px 18px}}
+  .photo{
+    float:right;width:132px;margin:4px 0 12px 20px;
+    border:1px solid var(--rule);border-radius:2px;
+    box-shadow:0 1px 6px rgba(0,0,0,.07);
   }
 
-  /* journal-style keywords as quietly tinted chips */
-  .keywords{margin:0 30px 48px;font-size:.88rem;line-height:2.15}
-  @media (max-width:560px){ .keywords{margin:0 4px 44px} }
+  /* ---------- keywords ---------- */
+  .keywords{margin:0 26px 26px;font-size:.88rem;line-height:2.1}
+  @media (max-width:600px){.keywords{margin:0 2px 26px}}
   .keywords .kw-label{font-style:italic;color:var(--faint);margin-right:6px}
   .chip{
     display:inline-block;border-radius:3px;padding:1px 9px 2px;margin:0 4px 4px 0;
     font-size:.82rem;white-space:nowrap;border:1px solid;
   }
-  .chip.b{color:#274e88;border-color:#c3d0e6;background:#f2f5fa}
-  .chip.o{color:#8a5124;border-color:#e0cbb5;background:#faf5ef}
-  .chip.g{color:#37634c;border-color:#c2d6ca;background:#f1f7f3}
-  .chip.r{color:#763244;border-color:#dcc2ca;background:#faf2f4}
+  .chip.b{color:#274e88;border-color:#c6d2e6;background:#f2f5fa}
+  .chip.o{color:#8a5124;border-color:#e2cdb7;background:#faf5ef}
+  .chip.g{color:#37634c;border-color:#c5d8cc;background:#f1f7f3}
+  .chip.r{color:#763244;border-color:#ddc4cc;background:#faf2f4}
 
-  section{margin-bottom:46px}
+  /* ---------- contents strip ---------- */
+  .contents{
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:11px 0;margin-bottom:52px;
+    font-size:.8rem;letter-spacing:.03em;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:4px 0;
+  }
+  .contents a{color:var(--faint);padding:0 14px;border-right:1px solid var(--rule)}
+  .contents a:last-child{border-right:none}
+  .contents a:hover{color:var(--ink);text-decoration:none}
+  @media (max-width:600px){.contents a{padding:0 10px}}
+
+  /* ---------- sections ---------- */
+  section{margin-bottom:52px;scroll-margin-top:20px}
   h2{
     font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    text-align:center;margin-bottom:22px;
+    text-align:center;margin-bottom:24px;
   }
-  h2::after{content:"";display:block;width:44px;height:2px;margin:10px auto 0;background:var(--ink)}
-  #research h2::after{background:var(--c-research)}
-  #observing h2::after{background:var(--c-obs)}
-  #methods h2::after{background:var(--c-methods)}
-  #publications h2::after{background:var(--c-pubs)}
+  h2::after{content:"";display:block;width:46px;height:2px;margin:11px auto 0;background:var(--ink)}
+  #research   h2::after{background:var(--c1)}
+  #publications h2::after{background:var(--c2)}
+  #observing  h2::after{background:var(--c3)}
+  #methods    h2::after{background:var(--c4)}
 
   p + p{margin-top:12px}
   .small{font-size:.92rem;color:var(--faint)}
+  .subhead{
+    font-variant:small-caps;letter-spacing:.05em;font-size:1rem;
+    margin:26px 0 12px;font-weight:600;
+  }
+  .lede-first::first-letter{font-size:1.35em;line-height:1;font-weight:500}
 
-  /* booktabs-style tables, top rule in the section hue */
+  /* ---------- tables ---------- */
   table{width:100%;border-collapse:collapse;font-size:.94rem}
-  .tabcaption{text-align:center;font-size:.88rem;color:var(--faint);margin-bottom:10px;font-style:italic}
   thead th{
     font-weight:600;text-align:left;font-size:.85rem;letter-spacing:.03em;
-    padding:8px 10px 8px 0;
-    border-bottom:1px solid var(--ink);
+    padding:8px 10px 8px 0;border-bottom:1px solid var(--ink);
   }
-  #observing thead th{border-top:2.5px solid var(--c-obs)}
-  #methods  thead th{border-top:2.5px solid var(--c-methods)}
-  tbody td{padding:8px 10px 8px 0;vertical-align:top;border-bottom:1px solid var(--rule)}
-  #observing tbody tr:last-child td{border-bottom:2.5px solid var(--c-obs)}
-  #methods  tbody tr:last-child td{border-bottom:2.5px solid var(--c-methods)}
+  #observing thead th{border-top:2.5px solid var(--c3)}
+  #methods   thead th{border-top:2.5px solid var(--c4)}
+  tbody td{padding:9px 10px 9px 0;vertical-align:top;border-bottom:1px solid var(--rule);transition:background .12s ease}
+  tbody tr:hover td{background:var(--panel)}
+  #observing tbody tr:last-child td{border-bottom:2.5px solid var(--c3)}
+  #methods   tbody tr:last-child td{border-bottom:2.5px solid var(--c4)}
   td.fac, td.k{font-weight:600;white-space:nowrap;font-size:.92rem}
-  #observing td.fac{color:var(--c-obs)}
-  #methods td.k{color:var(--c-methods)}
+  #observing td.fac{color:var(--c3)}
+  #methods   td.k{color:var(--c4)}
   td .sub{color:var(--faint);font-size:.86rem;font-style:italic;font-weight:400}
-  @media (max-width:560px){ td.fac,td.k{white-space:normal} }
+  @media (max-width:600px){td.fac,td.k{white-space:normal}}
 
+  /* ---------- reference lists ---------- */
   .refs{list-style:none}
-  .refs li{padding-left:1.6em;text-indent:-1.6em;margin-bottom:14px;font-size:.97rem}
-  .refs .me{font-weight:600;color:var(--c-pubs)}
+  .refs li{padding-left:1.7em;text-indent:-1.7em;margin-bottom:15px;font-size:.97rem}
+  .refs .me{font-weight:600;color:var(--c2)}
   .refs .jrnl{font-style:italic}
-  .refs .note{display:block;text-indent:0;color:var(--faint);font-size:.9rem;margin-top:2px}
-  .subhead{font-variant:small-caps;letter-spacing:.05em;font-size:1rem;margin:26px 0 12px;font-weight:600}
+  .refs .note{
+    display:block;text-indent:0;color:var(--faint);font-size:.9rem;margin-top:3px;
+    padding-left:.7em;border-left:2px solid #e4dfd8;
+  }
+  .role{color:var(--faint);font-size:.88rem}
+
+  /* ---------- highlight band ---------- */
+  .band{
+    background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--c3);
+    border-radius:2px;padding:16px 20px;margin-top:18px;font-size:.93rem;
+  }
+  .band b{color:var(--c3)}
 
   footer{
     border-top:1px solid var(--rule);
-    padding-top:16px;margin-top:60px;
+    padding-top:16px;margin-top:56px;
     font-size:.82rem;color:var(--faint);
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:8px 24px;
+  }
+  footer .f-links a{white-space:nowrap}
+  footer .sep{color:var(--rule);margin:0 6px}
+  @media (max-width:600px){
+    footer{flex-direction:column;gap:6px}
+  }
+
+  @media print{
+    body{background:#fff;font-size:10pt}
+    .contents,.runhead{display:none}
+    section{margin-bottom:18px;page-break-inside:avoid}
+    a{color:#000}
   }
 </style>
 </head>
@@ -144,7 +189,7 @@
 
   <div class="abstract">
     <img class="photo" src="my_image.jpg" alt="Vishwajeet Swain">
-    <p>
+    <p class="lede-first">
       I am an observational astronomer studying the light of the universe's most
       violent explosions: gamma-ray burst afterglows, kilonovae, and the
       electromagnetic counterparts of gravitational-wave sources. My work runs
@@ -158,39 +203,57 @@
       I work with Prof. Varun Bhalerao at IIT Bombay and collaborators at the
       Indian Institute of Astrophysics, and I am an active member of the
       <a href="https://sites.google.com/view/growthindia/">GROWTH-India</a>,
-      ZTF, and GW-MMADS collaborations. I defend my thesis in January 2027 and
-      am applying for postdoctoral positions beginning that year.
+      ZTF, GROWTH-MMA, and LSST-FAST collaborations. My thesis,
+      <em>Study of Electromagnetic Emission from Compact Objects</em>, is defended
+      in January 2027; I am applying for postdoctoral positions beginning that year.
+    </p>
+    <p>
+      Along the way I have led GIT's gravitational-wave follow-up operations and
+      supervised more than twenty students on observing, pipeline, and modeling
+      projects. The full record is in my <a href="cv.pdf">CV</a>.
     </p>
   </div>
 
   <p class="keywords">
     <span class="kw-label">Keywords:</span>
     <span class="chip b">GRB afterglows</span>
-    <span class="chip b">prompt emission</span>
     <span class="chip b">structured jets</span>
-    <span class="chip r">kilonovae</span>
+    <span class="chip b">off-axis geometry</span>
+    <span class="chip b">prompt emission</span>
+    <span class="chip b">GRB populations</span>
     <span class="chip r">GW counterparts</span>
-    <span class="chip b">dark bursts</span>
+    <span class="chip r">kilonovae</span>
+    <span class="chip r">orphan afterglows</span>
     <span class="chip o">time-domain surveys</span>
+    <span class="chip o">rapid follow-up</span>
     <span class="chip o">robotic telescopes</span>
     <span class="chip g">Bayesian inference</span>
     <span class="chip g">ML transient detection</span>
   </p>
 
+  <nav class="contents" aria-label="Contents">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#observing">Observing</a>
+    <a href="#methods">Software</a>
+  </nav>
+
+  <!-- ============================================================ -->
   <section id="research">
     <h2>Research</h2>
     <p>
       The question behind my thesis is geometric: gamma-ray burst jets are not
       uniform cones but structured outflows, and what we observe depends as much
       on where we stand as on what exploded. In
-      <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ...996L..38S">GRB&#8201;250704B</a>
+      <a href="https://doi.org/10.3847/2041-8213/ae2a20">GRB&#8201;250704B</a>
       we showed that a short burst's long-lived afterglow plateau is naturally
       explained by a narrow jet viewed from outside its core — the same
       configuration as GW170817, seen at cosmological distance. At the opposite
-      extreme, <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1000...58S">GRB&#8201;230204B</a>,
+      extreme, <a href="https://doi.org/10.3847/1538-4357/ae459f">GRB&#8201;230204B</a>,
       which our telescope discovered, is an on-axis view of one of the most
       energetic bursts known — an event I characterized end to end, from its
-      prompt gamma-ray emission through the multiwavelength afterglow.
+      prompt gamma-ray emission through the multiwavelength afterglow to its
+      Wolf–Rayet progenitor wind.
     </p>
     <p>
       Single events are anecdotes; my current work turns them into a population:
@@ -204,104 +267,41 @@
     </p>
   </section>
 
-  <section id="observing">
-    <h2>Observing &amp; Facilities</h2>
-    <!-- <p class="tabcaption">Table 1. Facilities used and roles held.</p> -->
-    <table>
-      <thead>
-        <tr><th>Facility</th><th>Role and use</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fac">GROWTH-India 0.7 m<br><span class="sub">Hanle, Ladakh</span></td>
-          <td>Core team for transient follow-up: robotic operations, ToO scheduling, and
-          responses to 100+ GRB, gravitational-wave, and Einstein Probe triggers;
-          two afterglow discoveries; demonstrated response of 1.6–8 h on real bursts.</td>
-        </tr>
-        <tr>
-          <td class="fac">Himalayan Chandra 2 m<br><span class="sub">IAO Hanle</span></td>
-          <td>Optical/NIR follow-up of GW counterpart candidates and GRB afterglows;
-          telescope proposals led for LIGO-Virgo-KAGRA observing-run coverage.</td>
-        </tr>
-        <tr>
-          <td class="fac">ZTF / P48<br><span class="sub">Palomar</span></td>
-          <td>Duty astronomer for the GRB and GW counterpart searches: 18 transient
-          discoveries reported to TNS; candidate vetting and scanning during O4–O5.</td>
-        </tr>
-        <tr>
-          <td class="fac">High-energy missions<br><span class="sub">Swift · Fermi · EP</span></td>
-          <td>Prompt-emission and afterglow data analysis; trigger-driven coordination
-          with space missions as the ground-segment responder.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="small" style="margin-top:12px">
-      Rapid response in numbers: ~130 GCN circulars (20+ as first author), 18 TNS
-      discoveries, and minor-planet astrometry contributed to 15+ MPECs.
-    </p>
-  </section>
-
-  <section id="methods">
-    <h2>Methods &amp; Software</h2>
-    <!-- <p class="tabcaption">Table 2. Technical stack.</p> -->
-    <table>
-      <thead>
-        <tr><th style="width:34%">Area</th><th>Tools and experience</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="k">Afterglow modeling</td>
-          <td>Bayesian inference with nested sampling; evidence-based model comparison;
-          structured-jet light-curve fitting; quantified cross-code systematics.</td>
-        </tr>
-        <tr>
-          <td class="k">Prompt modeling</td>
-          <td>Time-resolved and time-integrated spectral analysis of prompt gamma-ray
-          emission; energetics and initial Lorentz-factor constraints from
-          afterglow onset.</td>
-        </tr>
-        <tr>
-          <td class="k">Machine learning</td>
-          <td>Real/bogus classification for transient detection; training-set
-          construction from survey data; deployment in a live alert stream.</td>
-        </tr>
-        <tr>
-          <td class="k">Pipelines</td>
-          <td>End-to-end image subtraction and photometry; GCN ingest and automation;
-          reproducible, provenance-tracked workflows. Python · Astropy.</td>
-        </tr>
-        <tr>
-          <td class="k">Observing systems</td>
-          <td>Robotic telescope operations, ToO scheduling, and rapid-response
-          coordination across ground- and space-based facilities.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
+  <!-- ============================================================ -->
   <section id="publications">
-    <h2>Selected publications</h2>
+    <h2>Publications</h2>
+    <p class="small" style="text-align:center;margin-bottom:22px">
+      22 refereed publications (2 first-author, including one in <em>Nature</em>); h-index 10.
+      Full record on <a href="https://ui.adsabs.harvard.edu/public-libraries/QPuxOe25TZO_QVcuHLKSBg">ADS</a>.
+    </p>
 
     <p class="subhead">First author</p>
     <ol class="refs">
       <li>
         <span class="me">Swain, V.</span>, et al. 2026, "GRB 250704B: An Off-axis
         Short GRB with a Long-lived Afterglow Plateau,"
-        <span class="jrnl">ApJL</span>, 996, L38
-        [<a href="https://arxiv.org/abs/2509.02769">arXiv:2509.02769</a>]
+        <a href="https://doi.org/10.3847/2041-8213/ae2a20"><span class="jrnl">ApJL</span>, 996, L38</a>
+        <span class="note">The afterglow shape is set by viewing geometry rather than
+        energetics or environment — a cosmological analog of GW170817, and a template for
+        interpreting the next gravitational-wave counterpart.</span>
       </li>
       <li>
         <span class="me">Swain, V.</span>, et al. 2026, "GRB 230204B: GIT Discovery
         of a Fast Fading Afterglow Associated with an Energetic Gamma-Ray Burst
         from a Massive Star Progenitor,"
-        <span class="jrnl">ApJ</span>, 1000, 58
-        [<a href="https://arxiv.org/abs/2512.03136">arXiv:2512.03136</a>]
+        <a href="https://doi.org/10.3847/1538-4357/ae459f"><span class="jrnl">ApJ</span>, 1000, 58</a>
+        <span class="note">Discovery and complete characterization of one of the most energetic
+        bursts known, from prompt gamma-rays through a rapidly fading afterglow to its
+        Wolf–Rayet progenitor wind.</span>
       </li>
       <li>
         <span class="me">Swain, V.</span>, et al., "The GIT transient-detection
-        pipeline: image subtraction and machine-learning candidate
-        classification," in preparation
-        <span class="note">expected on arXiv September 2026</span>
+        pipeline: image subtraction and machine-learning candidate classification,"
+        in preparation <span class="note">expected on arXiv, September 2026</span>
+      </li>
+      <li>
+        <span class="me">Swain, V.</span>, et al., "A homogeneously modeled catalog
+        of GIT-observed GRB afterglows," in preparation
       </li>
     </ol>
 
@@ -310,36 +310,162 @@
       <li>
         Ho, A. Y. Q., et al. (incl. <span class="me">Swain, V.</span>) 2023,
         "Minutes-duration optical flares with supernova luminosities,"
-        <span class="jrnl">Nature</span>, 623, 927
+        <span class="jrnl">Nature</span>, 623, 927 <span class="role">[GIT follow-up photometry]</span>
       </li>
       <li>
         Kasliwal, M. M., et al. (incl. <span class="me">Swain, V.</span>) 2025,
-        "ZTF25abjmnps (AT 2025ulz) and S250818k: A Candidate Superkilonova from a
-        Subthreshold Subsolar Gravitational-wave Trigger,"
-        <span class="jrnl">ApJL</span>, 995, L59
+        "AT 2025ulz and S250818k: A Candidate Superkilonova from a Subthreshold
+        Subsolar Gravitational-wave Trigger," <span class="jrnl">ApJL</span>, 995, L59
+        <span class="role">[afterglow modeling]</span>
+      </li>
+      <li>
+        Li, M. L., et al. (incl. <span class="me">Swain, V.</span>) 2025,
+        "The Nature of Optical Afterglows without Gamma-Ray Bursts: Identification of
+        AT 2023lcr," <span class="jrnl">ApJ</span>, 985, 124
+        <span class="role">[discovered AT 2023lcr during ZTFReST scanning]</span>
       </li>
       <li>
         Srinivasaragavan, G. P., et al. (incl. <span class="me">Swain, V.</span>) 2025,
         "Multiwavelength analysis of AT 2023sva: a luminous orphan afterglow with
         evidence for a structured jet," <span class="jrnl">MNRAS</span>, 538, 351
+        <span class="role">[GIT follow-up]</span>
       </li>
       <li>
         Ahumada, T., et al. (incl. <span class="me">Swain, V.</span>) 2024,
         "Searching for Gravitational Wave Optical Counterparts with the Zwicky
         Transient Facility: Summary of O4a," <span class="jrnl">PASP</span>, 136, 114201
+        <span class="role">[counterpart scanning; GIT follow-up]</span>
+      </li>
+      <li>
+        Srinivasaragavan, G. P., et al. (incl. <span class="me">Swain, V.</span>) 2024,
+        "The Broad-lined Ic SN 2023pel from the Energetic GRB 230812B,"
+        <span class="jrnl">ApJL</span>, 960, L18
+        <span class="role">[GIT follow-up; multi-telescope image subtraction]</span>
+      </li>
+      <li>
+        Kumar, H., et al. (incl. <span class="me">Swain, V.</span>) 2022,
+        "India's First Robotic Eye for Time-domain Astrophysics: The GROWTH-India
+        Telescope," <span class="jrnl">AJ</span>, 164, 90
+        <span class="role">[operations handover; filter color terms]</span>
       </li>
     </ol>
 
     <p class="small">
-      Co-author on roughly twenty refereed publications in total; the complete,
-      current list is maintained on
-      <a href="https://ui.adsabs.harvard.edu/public-libraries/QPuxOe25TZO_QVcuHLKSBg">ADS</a>.
+      Plus 13 further refereed publications on supernovae, novae, solar-system objects,
+      and exoplanet ephemerides.
     </p>
+
+    <div class="band">
+      <b>Rapid communications.</b> 130 GCN Circulars (20+ as first author, including the
+      GIT afterglow discovery circulars for GRB 230204B and GRB 251126A) · 20 Astronomer's
+      Telegrams · 18 TNS discovery reports as ZTF duty astronomer · minor-planet astrometry
+      in 50+ MPECs.
+    </div>
   </section>
 
+  <!-- ============================================================ -->
+  <section id="observing">
+    <h2>Observing &amp; Facilities</h2>
+    <table>
+      <thead>
+        <tr><th>Facility</th><th>Role and use</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fac">GROWTH-India 0.7 m<br><span class="sub">Hanle, Ladakh</span></td>
+          <td>Core team for operations and transient follow-up since 2021: robotic operations,
+          ToO scheduling, and sustained GRB and Einstein Probe response. Discovered the optical
+          afterglows of <b>GRB 230204B</b> and <b>GRB 251126A</b>, the latter within four minutes
+          of trigger (best automated response: 39 s). Two-week on-site training at the
+          observatory in 2021, working with the hardware alongside the engineering team.</td>
+        </tr>
+        <tr>
+          <td class="fac">LVK O4 follow-up<br><span class="sub">team leader, 2023–25</span></td>
+          <td>Led GIT's gravitational-wave follow-up operations and built the end-to-end
+          response system; triggered observations for S230615az, S231113bw, and S241125n.</td>
+        </tr>
+        <tr>
+          <td class="fac">Himalayan Chandra 2 m<br><span class="sub">IAO Hanle</span></td>
+          <td>Optical and NIR follow-up of GW counterpart candidates and GRB afterglows.
+          <b>PI or Co-I on 21 accepted proposals</b> covering GRBs, Einstein Probe transients,
+          and gravitational-wave counterparts, including the LIGO IR1 cycle.</td>
+        </tr>
+        <tr>
+          <td class="fac">ZTF / P48<br><span class="sub">Palomar</span></td>
+          <td>Duty astronomer for ZTFReST and GROWTH-MMA: discovered the orphan afterglow
+          <b>AT 2023lcr</b>, plus ZTF23aaxzvrr and ZTF23abbfrqp; 18 TNS discovery reports.
+          ZTF and DECam scanning for gravitational-wave and short-GRB counterparts;
+          near-Earth object searches with ZStreaks (2021–24).</td>
+        </tr>
+        <tr>
+          <td class="fac">Space missions<br><span class="sub">Swift · Fermi · EP · Chandra</span></td>
+          <td>Prompt-emission and afterglow data analysis; DDT programs on <em>Chandra</em>
+          (GRB 230812B, GRB 250704B) and GMRT (GRB 260516D); further ToO triggering on
+          SEDM and NGPS.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="methods">
+    <h2>Software &amp; Methods</h2>
+    <table>
+      <thead>
+        <tr><th style="width:31%">Area</th><th>Systems built and tools used</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="k">Afterglow modeling</td>
+          <td>End-to-end analysis pipeline: ingestion, extinction correction, empirical fitting,
+          physical modeling by nested sampling with evidence/BIC comparison, cross-code
+          systematics validation, degeneracy and parameter-correlation analysis, and population
+          statistics. <span class="sub">afterglowpy · jetsimpy · redback · VegasAfterglow</span></td>
+        </tr>
+        <tr>
+          <td class="k">Prompt emission</td>
+          <td>Time-integrated and time-resolved spectral analysis; energetics and initial
+          Lorentz-factor constraints from the afterglow onset.
+          <span class="sub">Fermi-GBM · Swift-XRT · 3ML · GDT</span></td>
+        </tr>
+        <tr>
+          <td class="k">Transient detection</td>
+          <td>GIT detection system: source-injection training sets, image subtraction,
+          statistically validated analytic vetting, ML real/bogus classification, and a
+          human-scanning interface. <span class="sub">PyTorch · scikit-learn</span></td>
+        </tr>
+        <tr>
+          <td class="k">Survey pipelines</td>
+          <td>Rebuilt the automated nightly pipeline: reduction, recovery from failed astrometry,
+          saturation and bad-pixel masking, PSF photometry on weight maps, subtraction, median
+          and RMS-weighted stacking, and a nightly light-curve interface.
+          <span class="sub">Astropy · Photutils · SExtractor · PSFEx · SCAMP · SWarp</span></td>
+        </tr>
+        <tr>
+          <td class="k">Observatory systems</td>
+          <td>Fully automated LVK follow-up chain — alert and skymap ingestion, tiling,
+          scheduling, triggering, reduction, scanning, GCN publication — plus GIT ToO
+          scheduling, filter-wheel error handling, weather alerts, and multi-institute data
+          synchronization.</td>
+        </tr>
+        <tr>
+          <td class="k">Inference &amp; computing</td>
+          <td>emcee · PyMultiNest · UltraNest · nautilus · Python · Linux · Git · SQL · LaTeX</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+
   <footer>
-    <span>Vishwajeet Swain</span>
-    <span>Thank you for visiting this page.</span>
+    <span class="f-name">Vishwajeet Swain &mdash; Department of Physics, IIT Bombay</span>
+    <span class="f-links">
+      <a href="mailto:vishwajeet.phy@outlook.com">Email</a><span class="sep">·</span><a href="https://ui.adsabs.harvard.edu/public-libraries/QPuxOe25TZO_QVcuHLKSBg">ADS</a><span class="sep">·</span><a href="https://orcid.org/0000-0002-7942-8477">ORCID</a><span class="sep">·</span><a href="https://github.com/vishwajeet-phy">GitHub</a><span class="sep">·</span><a href="cv.pdf">CV</a>
+    </span>
   </footer>
 
 </div>
