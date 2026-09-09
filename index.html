@@ -132,8 +132,13 @@
   @media (max-width:600px){td.fac,td.k{white-space:normal}}
 
   /* ---------- reference lists ---------- */
-  .refs{list-style:none}
-  .refs li{padding-left:1.7em;text-indent:-1.7em;margin-bottom:15px;font-size:.97rem}
+  .refs{list-style:none;padding-left:0}
+  .refs li{padding-left:1.9em;text-indent:-1.9em;margin-bottom:15px;font-size:.97rem}
+  /* published papers carry one continuous number sequence, as in the CV */
+  ol.refs{counter-reset:pub var(--pubstart,0)}
+  ol.refs>li{counter-increment:pub}
+  ol.refs>li::before{content:counter(pub) ". ";font-weight:600;color:var(--c2)}
+  ul.refs>li::before{content:"\2022\00a0\00a0";color:var(--faint)}
   .refs .me{font-weight:600;color:var(--c2)}
   .refs .jrnl{font-style:italic}
   .refs .note{
@@ -175,7 +180,7 @@
 
   <div class="runhead">
     <span>V. Swain — IIT Bombay</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <div class="titleblock">
@@ -295,6 +300,10 @@
         bursts known, from prompt gamma-rays through a rapidly fading afterglow to its
         Wolf–Rayet progenitor wind.</span>
       </li>
+    </ol>
+
+    <p class="subhead">In preparation</p>
+    <ul class="refs">
       <li>
         <span class="me">Swain, V.</span>, et al., "The GIT transient-detection
         pipeline: image subtraction and machine-learning candidate classification,"
@@ -304,10 +313,10 @@
         <span class="me">Swain, V.</span>, et al., "A homogeneously modeled catalog
         of GIT-observed GRB afterglows," in preparation
       </li>
-    </ol>
+    </ul>
 
     <p class="subhead">Selected co-author</p>
-    <ol class="refs">
+    <ol class="refs" style="--pubstart:2">
       <li>
         Kasliwal, M. M., et al. (incl. <span class="me">Swain, V.</span>) 2025,
         "AT 2025ulz and S250818k: A Candidate Superkilonova from a Subthreshold
